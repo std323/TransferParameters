@@ -1,10 +1,10 @@
-#include<iostream>
+ï»¿#include<iostream>
 using namespace std;
 
 void FillRand(int arr[], const int n);
 void Print(int arr[], const int n);
 void Container(int* arr, const int n, int& num_even, int& num_odd);
-void Split(int* arr, int* even_arr, int* num_odd, const int n);
+void Split(int* arr, int* even_arr, int* odd_arr, const int n);
 
 
 void main()
@@ -13,7 +13,7 @@ void main()
 	const int n = 10;
 	int arr[n];
 	FillRand(arr, n);
-	cout << "Èñõîäíûé ìàññèâ: \n" << endl;
+	cout << "Ğ˜ÑÑ…Ğ¾Ğ´Ğ½Ñ‹Ğ¹ Ğ¼Ğ°ÑÑĞ¸Ğ²: \n" << endl;
 	Print(arr, n);
 
 	int num_even=0;
@@ -23,9 +23,9 @@ void main()
 	int* odd_arr = new int[num_odd];
 	Container(arr, n, num_even, num_odd);
 	Split(arr, even_arr, odd_arr, n);
-	cout << "Ìàññèâ ÷åòíûõ ıëåìåíòîâ: \n" << endl;
+	cout << "ĞœĞ°ÑÑĞ¸Ğ² Ñ‡ĞµÑ‚Ğ½Ñ‹Ñ… ÑĞ»ĞµĞ¼ĞµĞ½Ñ‚Ğ¾Ğ²: \n" << endl;
 	Print(even_arr, num_even);
-	cout << "Ìàññèâ íå÷åòíûõ ıëåìåíòîâ: \n" << endl;
+	cout << "ĞœĞ°ÑÑĞ¸Ğ² Ğ½ĞµÑ‡ĞµÑ‚Ğ½Ñ‹Ñ… ÑĞ»ĞµĞ¼ĞµĞ½Ñ‚Ğ¾Ğ²: \n" << endl;
 	Print(odd_arr, num_odd);
 
 }
@@ -34,8 +34,8 @@ void FillRand(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		*(arr + i) = rand() % 100;//îáğàùåíèå ê ıëåìåíòàì ìàññèâà ÷åğåç
-		//àğèôìåòèêó óêàçàòåëåé è îïåğàòîğ ğàçûìåíîâàíèÿ
+		*(arr + i) = rand() % 100;//Ğ¾Ğ±Ñ€Ğ°Ñ‰ĞµĞ½Ğ¸Ğµ Ğº ÑĞ»ĞµĞ¼ĞµĞ½Ñ‚Ğ°Ğ¼ Ğ¼Ğ°ÑÑĞ¸Ğ²Ğ° Ñ‡ĞµÑ€ĞµĞ·
+		//Ğ°Ñ€Ğ¸Ñ„Ğ¼ĞµÑ‚Ğ¸ĞºÑƒ ÑƒĞºĞ°Ğ·Ğ°Ñ‚ĞµĞ»ĞµĞ¹ Ğ¸ Ğ¾Ğ¿ĞµÑ€Ğ°Ñ‚Ğ¾Ñ€ Ñ€Ğ°Ğ·Ñ‹Ğ¼ĞµĞ½Ğ¾Ğ²Ğ°Ğ½Ğ¸Ñ
 	}
 }
 
