@@ -27,7 +27,8 @@ void main()
 	Print(even_arr, num_even);
 	cout << "Массив нечетных элементов: \n" << endl;
 	Print(odd_arr, num_odd);
-
+	delete[] even_arr;
+	delete[] odd_arr;
 }
 
 void FillRand(int arr[], const int n)
