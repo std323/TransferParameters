@@ -28,7 +28,7 @@ void main()
 	int - int
 	int* - ”казатель на 'int'
 	double - double
-	double* - ”казательна 'double'
+	double* - ”казатель на 'double'
 	-------------------------
 	*/
 

@@ -17,11 +17,13 @@ void main()
 	Print(arr, n);
 
 	int num_even=0;
-	int* even_arr = new int[num_even];
-
 	int num_odd = 0;
-	int* odd_arr = new int[num_odd];
+	
 	Container(arr, n, num_even, num_odd);
+	
+	int* even_arr = new int[num_even];
+	int* odd_arr = new int[num_odd];
+	
 	Split(arr, even_arr, odd_arr, n);
 	cout << "Массив четных элементов: \n" << endl;
 	Print(even_arr, num_even);
