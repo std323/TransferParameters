@@ -43,13 +43,13 @@ template<typename T>T* push_front(T arr[], int& n, int value)
 template<typename T>T** push_row_back(T* arr[], int& rows, const int cols)
 {
 	//1)ѕереопредел€ем массив указатедей:
-	int** buffer = new int* [rows + 1] {};
+	T** buffer = new T* [rows + 1] {};
 	//2)  опируем адреса строк из исходного массива указателей в новый массив:
 	for (int i = 0; i < rows; i++)buffer[i] = arr[i];
 	//3) ”дал€ем старый массив указателей:
 	delete[] arr;
 	//4) ƒобавл€ем новую строку в новый массив указателей:
-	buffer[rows] = new int[cols] {};
+	buffer[rows] = new T[cols] {};
 	//5) ѕосле добавлени€ строки количество строк увеличиваетс€ на 1:
 	rows++;
 	//6) ¬озвращаем новый массив на место вызова:
@@ -60,7 +60,7 @@ template<typename T>T** push_row_front(T* arr[], int& rows, const int cols)
 	T** buffer = new T * [rows + 1] {};
 	for (int i = 0; i < rows; i++)buffer[i + 1] = arr[i];
 	delete[] arr;
-	buffer[0] = new int[cols] {};
+	buffer[0] = new T[cols] {};
 	rows++;
 	return buffer;
 }
